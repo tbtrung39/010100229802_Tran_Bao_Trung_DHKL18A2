@@ -29,6 +29,8 @@ bien_string = "Day la kieu ky tu" #Định dạng str (string) - kiểu ký tự
 
 kieu_boolean_1 = True   #Định dạng bool (Boolean) - kiểu lựa chọn True, False 
 kieu_boolean_2 = False
+#0 -> False
+#1 -> True
 
 kieu_none = None  #Định dạng khai báo không định dạng
 
@@ -40,3 +42,4 @@ kieu_set = {1,2,"abc"} # Định dạng set (tập hợp) - kiểu dữ liệu t
 
 #Kiểm tra kiểu dữ liệu của một biến bất kì
 print(type(bien_float))
+#Biến là một kho lưu trữ dữ liệu
