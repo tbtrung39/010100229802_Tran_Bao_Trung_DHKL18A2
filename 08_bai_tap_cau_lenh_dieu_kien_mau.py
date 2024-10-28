@@ -82,9 +82,55 @@ print(f"Do dai AC = {do_dai_AC}")
 # Cho tọa độ I(x,y), bán kính R và một điểm M(a,b). 
 # Với các giá trị a, b, x, y, R bất kì, tìm vị trí của M so với mặt cầu tâm I bán kính R
 
+print("Nhap toa do I:")
+x = input("x = ")
+y = input("y = ")
+
+print("Nhap toa do M:")
+a = input("a = ")
+b = input("b = ")
+
+x = float(x)
+y = float(y)
+a = float(a)
+b = float(b)
+
+ban_kinh_r = input("Nhap vao ban kinh R: ")
+ban_kinh_r = float(ban_kinh_r)
+
+do_dai_IM = ((a-x)**2+(b-y)**2)**(1/2)
+if do_dai_IM > ban_kinh_r:
+    print("Diem M nam ngoai duong tron")
+elif do_dai_IM < ban_kinh_r:
+    print("Diem M nam trong duong tron")
+else:
+    print("Diem M nam tren duong tron")
+
 # Câu 7
 # Cho tọa độ 2 điểm A(x1, y1), B(x2, y2). 
 # Với các giá trị x1,x2,y1,y2 bất kỳ, tìm phương trình tổng quát của đường thẳng đi qua 2 điểm này.
+
+print("Nhap toa do A:")
+x_1 = input("x_1 = ")
+y_1 = input("y_1 = ")
+
+print("Nhap toa do B:")
+x_2 = input("x_2 = ")
+y_2 = input("y_2 = ")
+
+x_1 = float(x_1)
+x_2 = float(x_2)
+y_1 = float(y_1)
+y_2 = float(y_2)
+
+#Tìm vecto phan tuyen n(a,b)
+a = -(y_2 - y_1)
+b = x_2 - x_1
+#phương trình tổng quát của đường thẳng ax + by + c = 0
+c = -((-(y_2 - y_1))*x_1 + (x_2 - x_1)*y_1)
+
+print(f"Phuong trinh tong quat cua duong thang di qua AB: {a}*x + {b}*y + {c} = 0")
+
 
 # Câu 8
 # Viết chương trình tính điểm của sinh viên.
