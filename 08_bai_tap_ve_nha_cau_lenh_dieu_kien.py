@@ -45,7 +45,7 @@
 # Loại xe chỉ nhập 4 hoặc 7.
 
 
-# 11. Viết chương trình nhập lương nhân viên, tính thuế thu nhập và lương ròng (số tiền
+# 10. Viết chương trình nhập lương nhân viên, tính thuế thu nhập và lương ròng (số tiền
 # lương thực sự mà nhân viên đó nhận được).
 # Với các thông số giả sử như sau
 # • 30% thuế thu nhập nếu lương là 15 triệu.

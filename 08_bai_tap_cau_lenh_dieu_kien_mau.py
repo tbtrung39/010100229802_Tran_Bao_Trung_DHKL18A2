@@ -8,7 +8,15 @@
 # Giải phương trình bậc nhất ax+b=0 (với a, b là kiểu số nguyên).
 
 # Câu 4
-# Giải phương trình bậc hai a*x**2+b*x+c=0 (với a, b, c là kiểu số nguyên).
+# Giải phương trình bậc hai a*x**2 + b*x + c=0 (với a, b, c là kiểu số nguyên).
+
+
+
+
+
+
+
+
 
 # Câu 5
 # Cho tọa độ 3 điểm A(x1, y1, z1), B(x2, y2, z2), C(x3, y3, z3). 
