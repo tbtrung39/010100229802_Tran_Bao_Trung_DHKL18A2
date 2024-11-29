@@ -1,8 +1,56 @@
 #Bài 1: Nhập vào số nguyên dương n. 
 #In ra màn hình dãy số các số nguyên tố nhỏ hơn n theo thứ tự từ nhỏ đến lớn
+#Bài làm
+ds_nguyen_to = []
+while True:
+    n = input("Nhap vao so nguyen duong n: ")
+    if n.isdigit() == False:
+        print("Yeu cau nhap lai so nguyen duong!!")
+    else:
+        n = int(n)
+        break
+
+for i in range(1, n):
+    if i == 1:
+        ds_nguyen_to.append(i)
+        continue
+    for j in range(1,i):
+        if i%j == 0 and j != 1 and i != j:
+            break
+    else:
+        ds_nguyen_to.append(i)
+
+ds_nguyen_to.sort()
+print(ds_nguyen_to)
+# #Tính tổng các giá trị trong danh sách
+# tong = sum(ds_nguyen_to)
+# print(tong)
+
+
 
 #Bài 2: Nhập vào dãy A gồm n phần tử từ bàn phím. 
 #Tính tổng các phần tử trong dãy A
+ds_so = []
+while True:
+    n = input("Nhap vao so phan tu n trong danh sach: ")
+    if n.isdigit() == False:
+        print("Yeu cau nhap lai so nguyen duong!!")
+    else:
+        n = int(n)
+        break
+
+for i in range(n):
+    while True:
+        so = input(f"Nhap gia tri so thu {i + 1}: ")
+        if so.isdigit() == False:
+            print("Yeu cau nhap vao so!!")
+        else:
+            so = float(so)
+            break
+    ds_so.append(so)
+
+tong = sum(ds_so)
+print(f"Tong cac so vua nhap: {tong}")
 
 #Bài 3: Nhập vào số nguyên dương n.
 #In ra màn hình: 
