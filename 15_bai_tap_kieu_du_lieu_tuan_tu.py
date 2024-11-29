@@ -58,13 +58,56 @@ print(f"Tong cac so vua nhap: {tong}")
 # - Danh sách B gồm các số chẵn nhỏ hơn n
 #Sắp xếp dãy số theo thứ tự giảm dần
 
+
 #Bài 4: Viết chương trình sinh ra ma trận K kích cỡ m*n chỉ chứa số 0
+#Bài làm
+m = int(input("Nhap vao so cot cua ma tran m = "))
+n = int(input("Nhap vao so hang cua ma tran n = "))
+#0 ... m
+#.     .
+#.     .
+#.     .
+#n ... 0
+ma_tran_a = [[0,0,0],
+             [0,0,0],
+             [0,0,0]]
+ma_tran_a = []
+for hang in range(n):
+    phan_tu_trong_hang = []
+    for cot in range(m):
+        phan_tu_trong_hang.append(0)
+    ma_tran_a.append(phan_tu_trong_hang)
+print(ma_tran_a)
+
+ma_tran_a = [[0]*m]*n 
+print(ma_tran_a)
 
 #Bài 5: Viết chương trình nhập vào n. Sinh ra ma trận đơn vị I kích cỡ n*n
+#1 0 0 0
+#0 1 0 0
+#0 0 1 0
+#0 0 0 1
+n = int(input("Nhap vao n = "))
+ma_tran_don_vi = []
+for i in range(n):
+    phan_tu_trong_hang = [0]*i + [1] + [0]*(n-1-i)
+    ma_tran_don_vi.append(phan_tu_trong_hang)
+print(ma_tran_don_vi)
 
 #Bài 6: Viết chương trình nhập vào ma trận A kích cỡ m*n và in ra màn hình
 
 #Bài 7: Viết chương trình đảo vị trí hai hàng i, j của ma trận A kích cỡ m*n
+#1 0 0 0
+#0 1 0 0
+#0 0 1 0
+#0 0 0 1
+i = int(input("Nhap vao hang i: "))
+j = int(input("Nhap vao hang J: "))
+[[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+temp = ma_tran_don_vi[i]
+ma_tran_don_vi[i] = ma_tran_don_vi[j]
+ma_tran_don_vi[j] = temp
+print(ma_tran_don_vi)
 
 #Bài 8: Viết chương trình đảo vị trí hai cột i, j của ma trận A kích cỡ m*n
 
@@ -77,6 +120,16 @@ print(f"Tong cac so vua nhap: {tong}")
 # - Ma trận đối xứng của ma trận A
 
 #Bài 10: Lập một danh sách với n sinh viên bao gồm thông tin tên và điểm tổng kết cuối năm của các sinh viên đó
+# thong_tin_sinh_vien = {"Hung": 4.0}
+# ds_sinh_vien = [{"Hung": 4.0},{"Hung": 4.0},{"Hung": 4.0},{"Hung": 4.0}]
+ds_sinh_vien = []
+n = int(input("Nhap so sinh vien n = "))
+for sinh_vien in range(n):
+    print(f"Nhap thong tin sinh vien thu {sinh_vien + 1}:")
+    ten = input("Nhap ten sinh vien: ")
+    diem = float(input("Nhap diem sinh vien: "))
+    thong_tin_sinh_vien = {ten: diem}
+    ds_sinh_vien.append(thong_tin_sinh_vien)
 
 #Bài 11: Viết lệnh in danh sách sinh viên ở bài 10. Có dạng:
 #Ten    Diem
