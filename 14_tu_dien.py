@@ -8,7 +8,7 @@ tu_dien = {"abc":1,
            (0,1):"hijk", 
            3:[1,2,3]}
 #Khai báo từ điển
-#- Từ điển sử dụng ngoặc {} để khưởi tạo
+#- Từ điển sử dụng ngoặc {} để khởi tạo
 #- Mỗi phần tử phải theo cặp khóa: giá trị
 #- Khóa trong từ điển phải là không thể thay đổi
 #- Khóa không được giống nhau
