@@ -57,57 +57,57 @@
 
 #Bài tập Fibonacci
 #In ra n số Fibonacci
-# n = int(input("Nhap vao so nguyen duong n: "))
-# #F(n) = F(n-1) + F(n-2)
-# #0 1 1 2 3 5 8 13...
-# def fibonacci(n):
-#     #n = 2 => F_2 = 1
-#     if n == 2:
-#         return 1
-#     #n = 1 => F_1 = 1
-#     elif n == 1:
-#         return 1
-#     #n = 0 => F_0 = 0
-#     elif n == 0:
-#         return 0
-#     else:
-#         return fibonacci(n-1) + fibonacci(n-2)
+n = int(input("Nhap vao so nguyen duong n: "))
+#F(n) = F(n-1) + F(n-2)
+#0 1 1 2 3 5 8 13...
+def fibonacci(n):
+    #n = 2 => F_2 = 1
+    if n == 2:
+        return 1
+    #n = 1 => F_1 = 1
+    elif n == 1:
+        return 1
+    #n = 0 => F_0 = 0
+    elif n == 0:
+        return 0
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
 
-# for i in range(n):
-#     print(fibonacci(i), end=" ")
+for i in range(n):
+    print(fibonacci(i), end=" ")
     
     
 #Bài tập về giai thừa n!
-# n = int(input("Nhap vao so nguyen duong n: "))
-# tich=1
-# for i in range(1,n+1): #chạy n từ 1 đến n #giảm n đến 1 thì dừng
-#     tich=tich*i
-# print(tich)
+n = int(input("Nhap vao so nguyen duong n: "))
+tich=1
+for i in range(1,n+1): #chạy n từ 1 đến n #giảm n đến 1 thì dừng
+    tich=tich*i
+print(tich)
 
-# def giai_thua(x):
-#     if x == 1:
-#         return 1
-#     else:
-#         return x*giai_thua(x-1)
+def giai_thua(x):
+    if x == 1:
+        return 1
+    else:
+        return x*giai_thua(x-1)
 
-# print(giai_thua(n))
+print(giai_thua(n))
 #x*giai_thua(x-1)*giai_thua(x-1-1)*giai_thua(x-1-1-1)*....*1
 
-# #Hàm đếm countdown
-# n = 60
-# while True:
-#     print(n, end=" ")
-#     if n == 1:
-#         break
-#     else:
-#         n = n - 1
+#Hàm đếm countdown
+n = 60
+while True:
+    print(n, end=" ")
+    if n == 1:
+        break
+    else:
+        n = n - 1
         
-# def countdown(x):
-#     print(x, end=" ")
-#     if x == 1:
-#         return x
-#     else:
-#         return countdown(x)
+def countdown(x):
+    print(x, end=" ")
+    if x == 1:
+        return x
+    else:
+        return countdown(x)
 
 
 #Áp dụng đệ quy vào giải thuật
@@ -147,8 +147,33 @@ def merge_sort(a):
 a_sap_xep = merge_sort(a)
 print(a_sap_xep)
 #Giải thuật sắp xếp nhanh (quick sort)
+#Thuật toán sắp xếp nhanh chia dãy số đã cho bằng cách chọn một sô strong dãy làm phần tử pivot
+#Những số nào trong dãy nhỏ hơn pivot sẽ chuyển sang bên trái
+#Những số nào lớn hơn pivot sẽ chuyển sang bên phải
+#Thuật toán sẽ tiếp tục chọn pivot trên 2 dãy vừa chia và tiếp tục thực hiện sắp xếp đến khi các danh sách chia nhỏ còn lại đúng 1 phần tử
 
+#Hàm chuyen_vi_tri có chức năng tìm ra một chỉ số q nằm giữa (p, r) đóng vai trò pivot.
+#Sau khi hàm thực hiện xong các phần tử nằm bên trái chỉ số q sẽ có giá trị nhỏ hơn pivot và các phần tử bên phải sẽ có giá trị lớn hơn pivot
+def chuyen_vi_tri(danh_sach, p, r):
+    pivot = danh_sach[r]
+    i = pivot - 1
+    for j in range(p, r):
+        if danh_sach[j] < pivot:
+            i = i + 1
+            danh_sach[i], danh_sach[j] = danh_sach[j], danh_sach[i] 
+    if danh_sach[i + 1] > danh_sach[r]:
+        danh_sach[i + 1], danh_sach[r] = danh_sach[r], danh_sach[i + 1]
+    return i + 1
 
+def quick_sort(danh_sach, p, r):
+    if p < r:
+        q = chuyen_vi_tri(danh_sach, p, r)
+        quick_sort(danh_sach, p, q - 1)
+        quick_sort(danh_sach, q+1, r)
+
+a = [1, 5, 2, 4, 9, 3, 7, 8, 6]
+quick_sort(a, 0, len(a) - 1)
+print(a)
 
 #Giải thuật backtracking
 #Giải thuật nhánh cây lựa chọn (decision tree)
